@@ -1,1 +1,1 @@
-My shell_basics task readme
+This readme is about shell basics commands
