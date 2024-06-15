@@ -2,10 +2,9 @@
 
 # A for loop that prints Best School 10 times using until loop
 
-word="Best School"
 i=1
 until [ $i -gt 10 ] 
 do
-        echo "$word"
-	i=$(( i + 1 ))
+        echo "Best School"
+	((i++))
 done

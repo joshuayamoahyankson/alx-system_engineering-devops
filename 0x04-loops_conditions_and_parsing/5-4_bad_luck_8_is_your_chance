@@ -5,11 +5,10 @@
 word1="Best School"
 word2="bad luck"
 word3="good luck"
-i=0
+i=1
 
-while [ $i -lt 10 ]
+while [ $i -le 10 ]
 do
-	i=$(( i + 1 ))
 	if [ $i -eq 4 ]
 	then
 		echo "$word2"
@@ -19,4 +18,5 @@ do
 	else
         	echo "$word1"
 	fi
+	i=$(( i + 1 ))
 done
