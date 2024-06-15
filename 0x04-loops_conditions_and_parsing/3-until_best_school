@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-
 # A for loop that prints Best School 10 times using until loop
 
 i=1
+
 until [ $i -gt 10 ] 
 do
         echo "Best School"
