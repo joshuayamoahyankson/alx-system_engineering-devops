@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# A bash script that prints loops 10 times and displays certain words at certain numbers
+
+word1="Best School"
+word2="bad luck"
+word3="good luck"
+i=0
+
+while [ $i -lt 10 ]
+do
+	i=$(( i + 1 ))
+	if [ $i -eq 4 ]
+	then
+		echo "$word2"
+	elif [ $i -eq 8 ]
+	then
+		echo "$word3"
+	else
+        	echo "$word1"
+	fi
+done

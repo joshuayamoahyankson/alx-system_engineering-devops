@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# A bash script that prints loops 10 times and displays certain words at certain numbers 
+
+word1="bad luck from China"
+word2="bad luck from Japan"                                                                         word3="bad luck from Italy"
+
+i=1
+while [ $i -le 20 ]
+do
+	echo "$i"
+	case $i in 
+		4)
+			echo "$word1"
+			;;
+		9)
+			echo "$word2"
+			;;
+		17)
+			echo "$word3"
+			;;
+	esac
+	i=$(( i + 1 ))
+done                                               

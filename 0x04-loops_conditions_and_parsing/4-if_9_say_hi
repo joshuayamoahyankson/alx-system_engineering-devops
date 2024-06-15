@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Prints Best School 10 times but for the 9th iteration, displays Best
+# School and then Hi on a new line
+
+word="Best School"
+i=0
+
+while [ $i -lt 10 ]
+do
+        echo "$word"
+	i=$(( i + 1 ))
+	if [ $i == 9 ]
+	then
+		echo "Hi"
+	fi
+done

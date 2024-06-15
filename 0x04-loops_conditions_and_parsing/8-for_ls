@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# A Bash script that displays contents of a directory in a list format
+output=$(ls)
+for file in $output
+do
+	if [[ "$file" == .* ]]
+	then
+		continue
+	fi
+	file_name="${file#*-}"
+	echo "$file_name"
+done
