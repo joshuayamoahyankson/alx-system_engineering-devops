@@ -6,5 +6,6 @@
 #	Display in a user-oriented format
 #	Show process hierarchy
 
-ps aux
-pstree -A
+#ps aux
+#pstree -A
+top
