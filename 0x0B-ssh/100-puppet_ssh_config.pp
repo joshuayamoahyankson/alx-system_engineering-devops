@@ -21,7 +21,7 @@ file_line { 'add_dentity_file':
   match   => '^IdentityFile',
   require => File['/home/joshuayankson/.ssh/config'],
 }
-  
+
 file_line { 'passwd_auth_no':
   path    => '/home/joshuayankson/.ssh/config',
   line    => 'PasswordAuthentication no',
