@@ -16,7 +16,7 @@ file { '/etc/ssh/.ssh/config':
 }
 
 file_line { 'add_dentity_file':
-  path    => '/home/joshuayankson/.ssh/config',
+  path    => '/etc/ssh/.ssh/config',
   line    => 'IdentityFile ~/.ssh/school',
   match   => '^IdentityFile',
   require => File['/etc/ssh/.ssh/config'],
