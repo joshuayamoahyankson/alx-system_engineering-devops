@@ -1,30 +1,30 @@
 # Using Puppet to configure SSH Client
 
-file { '/home/joshuayankson/.ssh':
+file { '/etc/ssh/.ssh':
   ensure => 'directory',
   owner  => 'joshuayankson',
   group  => 'joshuayankson',
   mode   => '0700',
 }
 
-file { '/home/joshuayankson/.ssh/config':
+file { '/etc/ssh/.ssh/config':
   ensure  => 'file',
   owner   => 'joshuayankson',
   group   => 'joshuayankson',
   mode    => '0600',
-  require => File['/home/joshuayankson/.ssh'],
+  require => File['/etc/ssh/.ssh'],
 }
 
 file_line { 'add_dentity_file':
   path    => '/home/joshuayankson/.ssh/config',
-  line    => 'IdentityFile ~./ssh/school',
+  line    => 'IdentityFile ~/.ssh/school',
   match   => '^IdentityFile',
-  require => File['/home/joshuayankson/.ssh/config'],
+  require => File['/etc/ssh/.ssh/config'],
 }
 
 file_line { 'passwd_auth_no':
-  path    => '/home/joshuayankson/.ssh/config',
+  path    => '/etc/ssh/.ssh/config',
   line    => 'PasswordAuthentication no',
   match   => '^PasswordAuthentication',
-  require => File['/home/joshuayankson/.ssh/config'],
+  require => File['/etc/ssh/.ssh/config'],
 }
