@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Confiuring SSH to connect to a server withut typing a password
+
+Host joshua_server
+    HostName 54.161.241.34
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
