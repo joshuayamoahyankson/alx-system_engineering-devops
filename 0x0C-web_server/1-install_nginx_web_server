@@ -1,4 +1,30 @@
 #!/usr/bin/env bash
+# A Bash script that installs nginx
 
-
-echo "Hello World" | sudo tee /var/www/html/index.html
+echo "NGINX SETUP on it's WAY!"
+#Update package list before installation
+sudo apt-get update
+#Install Nginx
+sudo apt-get install -y nginx
+#Start Nginx
+sudo service nginx start
+#Check for Nginx status
+sudo service nginx status
+#echo the message Hello World to Nginx
+echo "Hello World!" | sudo tee /var/www/html/index.html
+#Ensure Nginx is configured to perform its tasks
+sudo sed -i 's|root /var/www/html;|root /var/www/html; index index.html;|' /etc/nginx/sites-available/default
+#Reload Nginx config without using systemctl
+sudo service nginx reload
+# Allow Nginx HTTP through the firewall
+sudo ufw allow 'Nginx HTTP'
+# Verify the setup by making a GET request
+curl http://localhost/
+# Check Nginx status again
+sudo service nginx status
+# Check firewall rules
+sudo ufw status
+# Echo a message
+echo "Installation done successfully!"
+#Exit the script when done
+exit 0
