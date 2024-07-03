@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Configuring Nginx server so that /redirect_me is redirecting to another page
+
+#update package lists
+sudo apt-get update
+# Install NGINX
+sudo apt-get install -y nginx
+# Start Nginx after installation
+sudo service nginx start
+# Use sed to add redirect to 301
+sudo sed -i '/server_name _;/a location /redirect_me {\n    return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n}' /etc/nginx/sites-available/default
+# Reload Nginx to apply new configuration
+sudo nginx -t
+sudo service nginx reload
+sudo ufw allow 'Nginx HTTP'
+curl -sI http://localhost/redirect_me
+# Exit with code 0
+exit 0
